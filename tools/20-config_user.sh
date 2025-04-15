@@ -2,6 +2,12 @@
 # This script creates a new user with SSH key-based authentication and sudo privileges. Custom username can be provided as an argument, otherwise it defaults to "automator".
 # It also disables password authentication for the new user and sets up the SSH directory with the public key from the current user.
 
+# Usage: ./20-config_user.sh [username]
+# Example: ./20-config_user.sh automator
+
+# Delete user
+# deluser --remove-home [username]
+
 # Check if script is run as root
 if [ "$(id -u)" -ne 0 ]; then
     echo "This script must be run as root" >&2
@@ -43,6 +49,13 @@ chown -R "$USERNAME:$USERNAME" "$HOME_DIR/.ssh"
 # Add user to sudo group
 echo "Adding $USERNAME to sudo group..."
 usermod -aG sudo "$USERNAME"
+
+# Configure sudo to not require password for this user
+echo "Configuring passwordless sudo for $USERNAME..."
+echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USERNAME
+chmod 440 /etc/sudoers.d/$USERNAME
+
+touch "$HOME_DIR/.bash_aliases"
 
 # Final message
 echo "User $USERNAME created successfully with:"
