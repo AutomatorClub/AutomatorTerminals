@@ -1,4 +1,6 @@
 #!/bin/bash
+# This script creates a new user with SSH key-based authentication and sudo privileges. Custom username can be provided as an argument, otherwise it defaults to "automator".
+# It also disables password authentication for the new user and sets up the SSH directory with the public key from the current user.
 
 # Check if script is run as root
 if [ "$(id -u)" -ne 0 ]; then
@@ -7,7 +9,7 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 # Define variables
-USERNAME="automaror"
+USERNAME="${1:-automator}"
 HOME_DIR="/home/$USERNAME"
 
 # Create user with home directory but disabled password
