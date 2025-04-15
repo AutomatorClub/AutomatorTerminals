@@ -34,3 +34,22 @@ fabric -U
 mkdir -p ~/.aliases
 cp -rf .aliases/fabric_patterns ~/.aliases/
 cp -rf .aliases/fabric_yt ~/.aliases/
+
+# Append to shell configuration files to ensure persistence across sessions
+ALIASES_FILES=(
+    "$HOME/.bash_aliases"
+)
+
+for aliases_file in "${ALIASES_FILES[@]}"; do
+    if [ -f "$aliases_file" ]; then
+        # Remove any existing source lines for the specific aliases file
+        sed -i "\|source ~/.aliases/fabric_patterns|d" "$aliases_file"
+        sed -i "\|source ~/.aliases/fabric_yt|d" "$aliases_file"
+        
+        # Add the source line
+        echo "source ~/.aliases/fabric_patterns" >> "$aliases_file"
+        echo "source ~/.aliases/fabric_yt" >> "$aliases_file"
+    fi
+done
+
+bash
