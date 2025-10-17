@@ -20,21 +20,21 @@ Feel free to explore the entire collection to find more tools that can assist wi
 6. [VPN with SSH](#vpn-with-ssh)
 7. [RSYNC](#rsync)
 8. [SUDO](#sudo)
-9. [Encrypt Files](#crypt)
-10. [Encrypt Partitions](#cryptpart)
-11. [SSL Certificates](#certs)
+9. [Encrypt Files](#encrypt-files)
+10. [Encrypt Partitions](#encrypt-partitions)
+11. [SSL Certificates](#ssl-certificates)
 12. [CVS](#cvs)
 13. [SVN](#svn)
-14. [Useful Commands](#other)
-15. [Install Software](#software)
-16. [Convert Media](#convert)
+14. [Useful Commands](#useful-commands)
+15. [Install Software](#install-software)
+16. [Convert Media](#convert-media)
 17. [Printing](#printing)
 18. [Databases](#databases)
-19. [Disk Quota](#quota)
+19. [Disk Quota](#disk-quota)
 20. [Shells](#shells)
 21. [Scripting](#scripting)
 22. [Programming](#programming)
-23. [Online Help](#onlinehelp)
+23. [Online Help](#online-help)
 
 # System
 
@@ -1070,7 +1070,7 @@ Read and write a 1 GB file on partition ad4s3c (/home)
 
 # Network
 
-[Routing](#routing) | [Additional IP](#secondip) | [Change MAC](#changemac) | [Ports](#ports) | [Firewall](#firewall) | [IP Forward](#ipforward) | [NAT](#nat) | [DNS](#dns) | [DHCP](#dhcp) | [Traffic](#traffic) | [QoS](#trafficctrl) | [NIS](#nis) | [Netcat](#netcat)
+[Top](#content) | [Routing](#routing) | [Additional IP](#secondip) | [Change MAC](#changemac) | [Ports](#ports) | [Firewall](#firewall) | [IP Forward](#ipforward) | [NAT](#nat) | [DNS](#dns) | [DHCP](#dhcp) | [Traffic](#traffic) | [QoS](#trafficctrl) | [NIS](#nis) | [Netcat](#netcat)
 
 ## Debugging (See also [Traffic analysis)](#traffic)
 
@@ -1724,7 +1724,7 @@ bob  # nc 192.168.1.1 4444
 
 # SSH SCP
 
-[Public key](#publickey) | [Fingerprint](#sshfingerprint) | [SCP](#scp) | [Tunneling](#sshtunnel) | [SSHFS](#sshfs)
+[Top](#content) | [Public key](#publickey) | [Fingerprint](#sshfingerprint) | [SCP](#scp) | [Tunneling](#sshtunnel) | [SSHFS](#sshfs)
 
 See other tricks [25 ssh cmd](https://blog.urfix.com/25-ssh-commands-tricks/)http://blog.urfix.com/25-ssh-commands-tricks/
 
@@ -1977,6 +1977,8 @@ Or via a two hops tunnel
 
 # VPN with SSH
 
+[Top](#content)
+
 As of version 4.3, OpenSSH can use the tun/tap device to encrypt a tunnel. This is very similar to other TLS based VPN solutions like OpenVPN. One advantage with SSH is that there is no need to install and configure additional software. Additionally the tunnel uses the SSH authentication like pre shared keys. The drawback is that the encapsulation is done over TCP which might result in poor performance on a slow link. Also the tunnel is relying on a single (fragile) TCP connection. This technique is very useful for a quick IP based VPN setup. There is no limitation as with the single TCP port forward, all layer 3/4 protocols like ICMP, TCP/UDP, etc. are forwarded over the VPN. In any case, the following options are needed in the sshd\_conf file:
 
 ```
@@ -2084,6 +2086,8 @@ The two private networks are now transparently connected via the SSH VPN. The IP
 
 # RSYNC
 
+[Top](#content)
+
 Rsync can almost completely replace cp and scp, furthermore interrupted transfers are efficiently restarted. A trailing slash (and the absence thereof) has different meanings, the man page is good... Here some examples:
 Copy the directories with full content:
 
@@ -2178,6 +2182,8 @@ pause
 
 # SUDO
 
+[Top](#content)
+
 Sudo is a standard way to give users some administrative rights without giving out the root password. Sudo is very useful in a multi user environment with a mix of server and workstations. Simply call the command with sudo:
 
 ```
@@ -2233,6 +2239,8 @@ ALL          DESKTOP = NOPASSWD: /sbin/mount /cdrom,/sbin/umount /cdrom
 ```
 
 # Encrypt Files
+
+[Top](#content)
 
 ## OpenSSL
 
@@ -2350,7 +2358,7 @@ Once the keys are imported it is very easy to encrypt or decrypt a file:
 
 # Encrypt Partitions
 
-[Linux with LUKS](#wluks) | [Linux dm-crypt only](#woluks) | [FreeBSD GELI](#bsdgeli) | [FBSD pwd only](#bsdpwd) | [OS X image](#osxcrypt)
+[Top](#content) | [Linux with LUKS](#wluks) | [Linux dm-crypt only](#woluks) | [FreeBSD GELI](#bsdgeli) | [FBSD pwd only](#bsdpwd) | [OS X image](#osxcrypt)
 
 There are (many) other alternative methods to encrypt disks, I only show here the methods I know and use. Keep in mind that the security is only good as long the OS has not been tempered with. An intruder could easily record the password from the keyboard events. Furthermore the data is freely accessible when the partition is *attached* and will not prevent an intruder to have access to it in this state.
 
@@ -2484,6 +2492,8 @@ Don't know by command line only. See [OS X Encrypted Disk Image](https://wiki.th
 
 # SSL Certificates
 
+[Top](#content)
+
 So called SSL/TLS certificates are cryptographic public key certificates and are composed of a public and a private key. The certificates are used to authenticate the endpoints and encrypt the data. They are used for example on a web server (https) or mail server (imaps).
 
 ## Procedure
@@ -2593,7 +2603,7 @@ To view the certificate information simply do:
 
 # CVS
 
-[Server setup](#cvssetup) | [CVS test](#cvstest) | [SSH tunneling](#cvsssh) | [CVS usage](#cvsusage)
+[Top](#content) | [Server setup](#cvssetup) | [CVS test](#cvstest) | [SSH tunneling](#cvsssh) | [CVS usage](#cvsusage)
 
 ## Server setup
 
@@ -2776,7 +2786,7 @@ Sometimes it is necessary to strip a directory level from the patch, depending h
 
 # SVN
 
-[Server setup](#svnsetup) | [SVN+SSH](#svnssh) | [SVN over http](#svnhttp) | [SVN usage](#svnusage)
+[Top](#content) | [Server setup](#svnsetup) | [SVN+SSH](#svnssh) | [SVN over http](#svnhttp) | [SVN usage](#svnusage)
 
 [Subversion (SVN)](http://subversion.tigris.org/)http://subversion.tigris.org/ is a version control system designed to be the successor of CVS (Concurrent Versions System). The concept is similar to CVS, but many shortcomings where improved. See also the [SVN book](http://svnbook.red-bean.com/en/1.4/)http://svnbook.red-bean.com/en/1.4/.
 
@@ -2900,7 +2910,7 @@ A new project, that is a directory with some files, is imported into the reposit
 
 # Useful Commands
 
-[less](#less) | [vi](#vi) | [mail](#mail) | [tar](#tar) | [zip](#zip) | [dd](#dd) | [screen](#screen) | [find](#find) | [Miscellaneous](#misccmd)
+[Top](#content) | [less](#less) | [vi](#vi) | [mail](#mail) | [tar](#tar) | [zip](#zip) | [dd](#dd) | [screen](#screen) | [find](#find) | [Miscellaneous](#misccmd)
 
 ## less
 
@@ -3289,6 +3299,8 @@ Time zone conversions are crucial when working with systems across different reg
 
 # Install Software
 
+[Top](#content)
+
 Usually the package manager uses the proxy variable for http/ftp requests. In .bashrc:
 
 ```
@@ -3420,6 +3432,8 @@ Due to complex dependencies and runtime linking, programs are difficult to copy 
 
 # Convert Media
 
+[Top](#content)
+
 Sometimes one simply need to convert a video, audio file or document to another format.
 
 ## Text encoding
@@ -3526,6 +3540,8 @@ The program [`cdparanoia`](http://xiph.org/paranoia/)http://xiph.org/paranoia/ c
 
 # Printing
 
+[Top](#content)
+
 ## Print with lpr
 
 ```
@@ -3558,6 +3574,8 @@ Print to a PDF file even if the application does not support it. Use `gs` on the
 ```
 
 # Databases
+
+[Top](#content)
 
 ## PostgreSQL
 
@@ -3698,6 +3716,8 @@ sqlite database_v2.db .dump | sqlite3 database_v3.db
 
 # Disk Quota
 
+[Top](#content)
+
 A disk quota allows to limit the amount of disk space and/or the number of files a user or (or member of group) can use. The quotas are allocated on a per-file system basis and are enforced by the kernel.
 
 ## Linux setup
@@ -3797,6 +3817,8 @@ Users can check their quota by simply typing `quota` (the file quota.user must b
 ```
 
 # Shells
+
+[Top](#content)
 
 Most Linux distributions use the bash shell while the BSDs use tcsh, the bourne shell is only used for scripts. Filters are very useful and can be piped:
 
@@ -3908,7 +3930,7 @@ The emacs mode enables to use the emacs keys shortcuts to modify the command pro
 
 # Scripting
 
-[Basics](#bournebasics) | [Script example](#bourneexample) | [awk](#awk) | [sed](#sed) | [Regular Expressions](#regex) | [useful commands](#shcmd)
+[Top](#content) | [Basics](#bournebasics) | [Script example](#bourneexample) | [awk](#awk) | [sed](#sed) | [Regular Expressions](#regex) | [useful commands](#shcmd)
 
 The Bourne shell (/bin/sh) is present on all Unix installations and scripts written in this language are (quite) portable; `man 1 sh` is a good reference.
 
@@ -4097,6 +4119,8 @@ I use this little trick to change the file extension for many files at once. For
 
 # Programming
 
+[Top](#content)
+
 ## C basics
 
 ```
@@ -4237,6 +4261,8 @@ clean:
 ```
 
 # Online Help
+
+[Top](#content)
 
 ## Documentation
 
