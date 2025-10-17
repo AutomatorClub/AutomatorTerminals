@@ -1977,7 +1977,7 @@ Or via a two hops tunnel
 
 # VPN with SSH
 
-[Top](#content)
+[Top](#content) | [Single P2P](#single-p2p-connection) | [Connect networks](#connect-two-networks)
 
 As of version 4.3, OpenSSH can use the tun/tap device to encrypt a tunnel. This is very similar to other TLS based VPN solutions like OpenVPN. One advantage with SSH is that there is no need to install and configure additional software. Additionally the tunnel uses the SSH authentication like pre shared keys. The drawback is that the encapsulation is done over TCP which might result in poor performance on a slow link. Also the tunnel is relying on a single (fragile) TCP connection. This technique is very useful for a quick IP based VPN setup. There is no limitation as with the single TCP port forward, all layer 3/4 protocols like ICMP, TCP/UDP, etc. are forwarded over the VPN. In any case, the following options are needed in the sshd\_conf file:
 
@@ -2086,7 +2086,7 @@ The two private networks are now transparently connected via the SSH VPN. The IP
 
 # RSYNC
 
-[Top](#content)
+[Top](#content) | [Rsync on Windows](#rsync-on-windows)
 
 Rsync can almost completely replace cp and scp, furthermore interrupted transfers are efficiently restarted. A trailing slash (and the absence thereof) has different meanings, the man page is good... Here some examples:
 Copy the directories with full content:
@@ -2182,7 +2182,7 @@ pause
 
 # SUDO
 
-[Top](#content)
+[Top](#content) | [Configuration](#configuration)
 
 Sudo is a standard way to give users some administrative rights without giving out the root password. Sudo is very useful in a multi user environment with a mix of server and workstations. Simply call the command with sudo:
 
@@ -2240,7 +2240,7 @@ ALL          DESKTOP = NOPASSWD: /sbin/mount /cdrom,/sbin/umount /cdrom
 
 # Encrypt Files
 
-[Top](#content)
+[Top](#content) | [OpenSSL](#openssl) | [GPG](#gpg)
 
 ## OpenSSL
 
@@ -2492,7 +2492,7 @@ Don't know by command line only. See [OS X Encrypted Disk Image](https://wiki.th
 
 # SSL Certificates
 
-[Top](#content)
+[Top](#content) | [Procedure](#procedure) | [Configure OpenSSL](#configure-openssl) | [Create CA](#create-a-certificate-authority) | [Create CSR](#create-a-certificate-signing-request) | [Sign certificate](#sign-the-certificate) | [Create united cert](#create-united-certificate) | [View certificate](#view-certificate-information)
 
 So called SSL/TLS certificates are cryptographic public key certificates and are composed of a public and a private key. The certificates are used to authenticate the endpoints and encrypt the data. They are used for example on a web server (https) or mail server (imaps).
 
@@ -3299,7 +3299,7 @@ Time zone conversions are crucial when working with systems across different reg
 
 # Install Software
 
-[Top](#content)
+[Top](#content) | [List packages](#list-installed-packages) | [Add/remove](#addremove-software) | [Library path](#library-path)
 
 Usually the package manager uses the proxy variable for http/ftp requests. In .bashrc:
 
@@ -3432,7 +3432,7 @@ Due to complex dependencies and runtime linking, programs are difficult to copy 
 
 # Convert Media
 
-[Top](#content)
+[Top](#content) | [Text encoding](#text-encoding) | [Unix-DOS newlines](#unix---dos-newlines) | [PDF images](#pdf-images-and-concatenate-pdf-files) | [Convert video](#convert-video) | [Copy audio cd](#copy-an-audio-cd)
 
 Sometimes one simply need to convert a video, audio file or document to another format.
 
@@ -3540,7 +3540,7 @@ The program [`cdparanoia`](http://xiph.org/paranoia/)http://xiph.org/paranoia/ c
 
 # Printing
 
-[Top](#content)
+[Top](#content) | [Print with lpr](#print-with-lpr)
 
 ## Print with lpr
 
@@ -3575,7 +3575,7 @@ Print to a PDF file even if the application does not support it. Use `gs` on the
 
 # Databases
 
-[Top](#content)
+[Top](#content) | [PostgreSQL](#postgresql) | [MySQL](#mysql) | [SQLite](#sqlite)
 
 ## PostgreSQL
 
@@ -3716,7 +3716,7 @@ sqlite database_v2.db .dump | sqlite3 database_v3.db
 
 # Disk Quota
 
-[Top](#content)
+[Top](#content) | [Linux setup](#linux-setup) | [FreeBSD setup](#freebsd-setup) | [Assign limits](#assign-quota-limits)
 
 A disk quota allows to limit the amount of disk space and/or the number of files a user or (or member of group) can use. The quotas are allocated on a per-file system basis and are enforced by the kernel.
 
@@ -3818,7 +3818,7 @@ Users can check their quota by simply typing `quota` (the file quota.user must b
 
 # Shells
 
-[Top](#content)
+[Top](#content) | [bash](#bash) | [tcsh](#tcsh)
 
 Most Linux distributions use the bash shell while the BSDs use tcsh, the bourne shell is only used for scripts. Filters are very useful and can be piped:
 
@@ -4119,7 +4119,7 @@ I use this little trick to change the file extension for many files at once. For
 
 # Programming
 
-[Top](#content)
+[Top](#content) | [C basics](#c-basics) | [C example](#c-example) | [C++ basics](#c-basics-1) | [C++ example](#c-example-1)
 
 ## C basics
 
@@ -4262,7 +4262,7 @@ clean:
 
 # Online Help
 
-[Top](#content)
+[Top](#content) | [Documentation](#documentation) | [Other references](#other-unixlinux-references)
 
 ## Documentation
 
