@@ -1,0 +1,16 @@
+services:
+  open_notebook_single:
+    image: lfnovo/open_notebook:v1-latest-single
+    ports:
+      - "8502:8502"  # React frontend
+      - "5055:5055"  # REST API
+    env_file:
+      - stack.env
+    volumes:
+      - notebook_data:/app/data          # Application data
+      - surreal_single_data:/mydata      # SurrealDB data
+    restart: always
+
+volumes:
+  notebook_data:
+  surreal_data:
