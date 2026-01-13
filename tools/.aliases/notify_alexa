@@ -1,0 +1,17 @@
+notify_alexa() {
+    if [ -z "$1" ]; then
+        echo "Usage: notify_alexa \"your message\""
+        return 1
+    fi
+    
+    if [ -z "$NOTIFYME" ]; then
+        echo "Error: NOTIFYME environment variable not set"
+        return 1
+    fi
+    
+    curl -s https://api.notifymyecho.com/v1/NotifyMe \
+        -H "Content-Type: application/json" \
+        -d "{\"notification\":\"$1\",\"accessCode\":\"$NOTIFYME\"}"
+    
+    echo # Add newline after curl output
+}
